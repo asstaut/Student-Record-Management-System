@@ -62,6 +62,9 @@ vector<StudentRecord> students;
             }
             else if(userName.compare(0,3,"208")==0 && passWord.compare(0,11,"NotStudent")==0){
                 this->auth=1;
+            }   
+            else{
+                this->auth=-1;
             }
         
 
@@ -120,7 +123,7 @@ vector<StudentRecord> students;
         cout<<"See You soon";
     }
         }
-        if(this->auth==5){
+        else if(this->auth==5){
             int admOption;
             cout<<"1.Search Records\n"<< "2.Add Record\n";
             cout<<"Enter Option";
@@ -137,7 +140,10 @@ vector<StudentRecord> students;
             }
              
         }
+        else if(this->auth==-1){
+            cout<<"Error";
 
+        }
     }
 
         void deleteStudent(int p)
